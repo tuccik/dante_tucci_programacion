@@ -45,21 +45,23 @@ class App(customtkinter.CTk):
     
     def btn_convertir_c_f_on_click(self):
         centigrados = self.txt_temperatura_c.get()
-        centigrados = int(centigrados)
+        centigrados = float(centigrados)
 
         conversor_centigrados = (centigrados * 9/5) + 32
-        conversor_centigrados = int(conversor_centigrados)
+        conversor_centigrados = round(conversor_centigrados, 2)
+        
 
-        alert("Conversor de C° a F°", f"{centigrados}°C es igual a {conversor_centigrados}F° ")
+        alert("Conversor de C° a F°", f"{centigrados}°C es igual a  {conversor_centigrados}F° ")
 
     def btn_convertir_f_c_on_click(self):
         farenheit = self.txt_temperatura_f.get()
-        farenheit = int(farenheit)
+        farenheit = float(farenheit)
+        
 
-        conversor_farenheit = (centigrados * 9/5) + 32
-        conversor_farenheit = int(conversor_farenheit)
+        conversor_farenheit = (farenheit - 32) * (5/9)
+        conversor_farenheit =  round(conversor_farenheit, 2)
 
-        alert("Conversor de C° a F°", f"{centigrados}°C es igual a {conversor_centigrados}F° ")
+        alert("Conversor de C° a F°", f"{farenheit}°F es igual a {conversor_farenheit}C° ")
     
     
 if __name__ == "__main__":
