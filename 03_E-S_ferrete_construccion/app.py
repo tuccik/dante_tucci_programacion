@@ -63,7 +63,29 @@ class App(customtkinter.CTk):
         self.btn_calcular.grid(row=3, pady=10, columnspan=2, sticky="nsew")
 
     def btn_calcular_on_click(self):
-        pass
+        largo = self.txt_largo.get()
+        largo = int(largo)
+
+        ancho = self.txt_ancho.get()
+        ancho = int(ancho)
+
+        metros2 = largo*ancho
+
+        perimetro = largo*2 + ancho*2
+        
+        metroslineales = perimetro
+
+        cantidad_quebrachogrueso = 4 + metroslineales / 250 
+
+        cantidad_quebrachofino = metroslineales / 12
+
+        cantidad_de_varillas = metroslineales /2 
+
+        alambre = metroslineales * 7
+
+        alert("Calculo.", f"El terreno tiene {int(metros2)} metros cuadrados\n{int(metroslineales)} Metros lineales \nSe utilizaran {int(cantidad_quebrachogrueso)} Quebrachos gruesos \n{int(cantidad_quebrachofino)} Quebrachos finos \n {int(cantidad_de_varillas)} Varillas\n{int(alambre)} Alambres de alta resistencia")
+
+
 
 
 if __name__ == "__main__":
